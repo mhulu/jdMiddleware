@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Report;
+use Illuminate\Support\Facades\DB;
 
 class LisController extends Controller {
 	public function index() {
-		$report = Report::all();
+		$report = DB::select('select repo_no, name from as_report where (name REGEXP "\d+" )');
 		return $report;
 	}
 }
