@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Report;
+
 class LisController extends Controller {
 	public function index() {
-		return 'asdf';
+		$report = Report::all();
+		return $report;
 	}
 }
